@@ -1,0 +1,9 @@
+version: '2'
+services:
+  control:
+    build: control
+  node:
+    build: node
+    environment:
+      - AUTHORIZED_KEYS=${KEYS}
+
