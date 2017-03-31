@@ -5,3 +5,5 @@ RUN pip install --upgrade pip && pip install ansible
 
 # Show version.
 RUN ansible --version
+
+CMD ['bash']
