@@ -2,8 +2,8 @@ version: '2'
 services:
   control:
     build: control
-  node:
-    build: node
+  debian:
+    build: node-debian
     environment:
       - AUTHORIZED_KEYS=${KEYS}
 
