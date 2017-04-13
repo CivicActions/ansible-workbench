@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker-compose --file ${GIT_ROOT}/docker-compose.yml $@

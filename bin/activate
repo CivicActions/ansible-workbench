@@ -13,7 +13,7 @@ else
 fi
 
 [ "$(alias | grep deactivate)" ] && deactivate  # In case already activated.
-GIT_ROOT=$(git rev-parse --show-toplevel)
+export GIT_ROOT=$(git rev-parse --show-toplevel)
 alias deactivate="export PATH=$PATH; export PS1=\"$PS1\"; unset WORKBENCH"
 export PATH=$GIT_ROOT/bin:$PATH
 export WORKBENCH="a-bench"
