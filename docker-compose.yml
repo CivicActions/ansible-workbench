@@ -2,6 +2,13 @@ version: '2'
 services:
   control:
     build: control
+    environment:
+      - SSH_AUTH_SOCK=/ssh-agent
+    volumes:
+      - ${PWD}:/opt/ansible
+      - ${SSH_AGENT_PATH}:/ssh-agent
+    links:
+      - debian:debian
   debian:
     build: node-debian
     environment:

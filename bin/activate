@@ -17,6 +17,8 @@ GIT_ROOT=$(git rev-parse --show-toplevel)
 alias deactivate="export PATH=$PATH; export PS1=\"$PS1\"; unset WORKBENCH"
 export PATH=$GIT_ROOT/bin:$PATH
 export WORKBENCH="a-bench"
+export SSH_AGENT_PATH=$(readlink -f $SSH_AUTH_SOCK)
+export KEYS=$(cat ~/.ssh/id_rsa.pub)
 
 if [ "$SHELL_TYPE" = "bash" ];then
   export PS1="${PS1}\[\033[01;31m\](${WORKBENCH})\[\033[00m\] \$ "
