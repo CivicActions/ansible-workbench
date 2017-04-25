@@ -9,8 +9,13 @@ services:
       - ${SSH_AGENT_PATH}:/ssh-agent
     links:
       - debian:debian
+      - centos:centos
   debian:
     build: node-debian
+    environment:
+      - AUTHORIZED_KEYS=${KEYS}
+  centos:
+    build: node-centos
     environment:
       - AUTHORIZED_KEYS=${KEYS}
 
