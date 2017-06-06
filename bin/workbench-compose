@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+export workdir=${PWD}
+cd ${GIT_ROOT}
 docker-compose --file ${GIT_ROOT}/docker-compose.yml $@

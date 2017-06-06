@@ -1,4 +1,4 @@
-# Ansible Dev Env
+# Ansible Dev Environment
 ## An attempt at a quick development environment for ansible configuration
 
 ## Sample usage:
@@ -13,6 +13,6 @@ ansible  all -i inventory/sample -m ping
 ```
 workbench-compose scale debian=5
 workbench-inventory > inventory/dev
-ansible  all -i inventory/sample -m ping
+ansible  all -i inventory/dev -m ping
 ```
 

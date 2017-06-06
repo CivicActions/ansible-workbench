@@ -5,7 +5,7 @@ services:
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
     volumes:
-      - ${PWD}:/opt/ansible
+      - ${workdir}:/opt/ansible
       - ${SSH_AGENT_PATH}:/ssh-agent
     links:
       - debian:debian
