@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+services=$(docker-compose config --services | grep -v control)
+containers=$(workbench-compose ps -q \
+  | xargs docker inspect --format='{{index .Config.Labels "com.docker.compose.service"}} {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
+  | grep -v control | sort)
+
+for s in ${services}; do
+  echo "[${s}]"
+  echo "${containers}" | grep $s | awk '{print $2}'
+  echo ""
+done
+
+
